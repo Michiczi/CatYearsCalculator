@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title desc">
+  <title id="title">Ikona kota — Cat Years</title>
+  <desc id="desc">Prosty, skalowalny wektorowy znak przedstawiający twarz kota z wąsami i sercem.</desc>
+  <circle cx="128" cy="128" r="120" fill="#FFF8E7" stroke="#F2A65A" stroke-width="6"/>
+  <path d="M56 84 L86 48 L98 92 Z" fill="#F2A65A"/>
+  <path d="M200 84 L170 48 L158 92 Z" fill="#F2A65A"/>
+  <ellipse cx="128" cy="136" rx="72" ry="66" fill="#FFEFD6" stroke="#E08B4A" stroke-width="4"/>
+  <ellipse cx="98" cy="130" rx="12" ry="16" fill="#2E2E2E"/>
+  <ellipse cx="158" cy="130" rx="12" ry="16" fill="#2E2E2E"/>
+  <path d="M128 150 q8 6 0 14 q-8-8 0-14" fill="#F28C8C"/>
+  <path d="M120 160 q8 6 16 0" stroke="#B0503A" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <g stroke="#B0503A" stroke-width="3" stroke-linecap="round">
+    <path d="M82 148 h-36"/>
+    <path d="M82 156 h-32"/>
+    <path d="M174 148 h36"/>
+    <path d="M174 156 h32"/>
+  </g>
+  <path d="M128 98 c8 -12 28 -12 36 0 c8 12 -6 28 -18 34 c-12 -6 -26 -22 -18 -34 z" fill="#FF6B6B" opacity="0.95"/>
+  <ellipse cx="128" cy="214" rx="60" ry="10" fill="#000" opacity="0.06"/>
+</svg>

@@ -5,29 +5,122 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CatYears"
         mc:Ignorable="d"
-        Title="Cat Years Calculator" Height="450" Width="550">
-    <StackPanel>
-        <StackPanel
-            Orientation="Horizontal"
-            >
-            <TextBlock
-                Text="How old is your cat? (years)"
-                FontSize="24"
-                />
-            <TextBox
-                x:Name="InputCatAge"
-                Width="120"
-                Margin="5,0"
-                TextAlignment="Center"
-                FontSize="16"
-                />
-        </StackPanel>
-        <TextBlock 
-            x:Name="ResultTextBlox"
-            Text="Your car is "
-            FontSize="24"
-            >
-        </TextBlock>
-        <Image Source="/Images/persian-grey.png" Height="375"/>
-    </StackPanel>
+        Icon="/Images/cat-icon.ico"
+        Title="Cat Years Calculator"
+        MinWidth="360" MinHeight="380"
+        Width="700" Height="480"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource WindowBackgroundBrush}"
+        FontFamily="Segoe UI">
+
+    <Window.Resources>
+        <LinearGradientBrush x:Key="WindowBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#FFF9F5" Offset="0"/>
+            <GradientStop Color="#FFEFE2" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="PrimaryGradient" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#FFD89A" Offset="0"/>
+            <GradientStop Color="#F2A65A" Offset="1"/>
+        </LinearGradientBrush>
+
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryGradient}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="12" SnapsToDevicePixels="True">
+                            <Grid Margin="6,2">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock Text="🐾" FontSize="16" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="#AF602E" BlurRadius="10" Opacity="0.18" Direction="270" ShadowDepth="2"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="border" Property="RenderTransform">
+                                    <Setter.Value><ScaleTransform ScaleX="1.03" ScaleY="1.03"/></Setter.Value>
+                                </Setter>
+                                <Setter TargetName="border" Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="RenderTransform">
+                                    <Setter.Value><ScaleTransform ScaleX="0.985" ScaleY="0.985"/></Setter.Value>
+                                </Setter>
+                                <Setter TargetName="border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Color="#E79B5A" Offset="0"/>
+                                            <GradientStop Color="#D67C3A" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Opacity" Value="0.6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <DropShadowEffect x:Key="CardShadow" Color="#000000" BlurRadius="18" Opacity="0.08" Direction="270" ShadowDepth="4"/>
+    </Window.Resources>
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22" CornerRadius="18"
+                Background="#FFFFFFFF" MaxWidth="900" Width="Auto" Effect="{StaticResource CardShadow}">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Focusable="False">
+                <WrapPanel Orientation="Horizontal" ItemHeight="Auto" ItemWidth="Auto" MinWidth="320">
+                    <StackPanel MinWidth="260" Width="420" Margin="0,0,18,0" VerticalAlignment="Center">
+                        <TextBlock Text="Cat Years" FontSize="30" FontWeight="SemiBold" Foreground="#3A2B2B" />
+                        <TextBlock Text="Oblicz wiek kota w latach ludzkich" Margin="0,6,0,16" Foreground="#6B5A55"/>
+
+                        <TextBlock Text="Ile lat ma Twój kot?" FontSize="15" Foreground="#5A4A46"/>
+                        <TextBox x:Name="InputCatAge"
+                                 Width="240"
+                                 Margin="0,8,0,10"
+                                 TextAlignment="Center"
+                                 FontSize="20"
+                                 KeyDown="InputCatAge_KeyDown"
+                                 ToolTip="Wpisz wiek kota (np. 3 lub 2.5)"/>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="CalculateButton" Style="{StaticResource PrimaryButton}" Click="CalculateButton_Click" Margin="0,0,12,0">
+                                Oblicz
+                            </Button>
+                            <Button Click="ClearButton_Click" Background="#E8D7C9" Foreground="#3A2B2B" Padding="10,6" FontSize="16" BorderThickness="0">
+                                Wyczyść
+                            </Button>
+                        </StackPanel>
+
+                        <TextBlock x:Name="ResultTextBlock" Text=" " Margin="0,18,0,0" FontSize="18" Foreground="#3A2B2B" TextWrapping="Wrap"/>
+                        <TextBlock Text="Wzór przyjęty: 1 rok = 15 lat ludzkich, 2 rok = +9, każdy kolejny = +4" FontSize="12" Foreground="#8B776D" Margin="0,10,0,0"/>
+                    </StackPanel>
+                    <Border Background="#FFF7F2" CornerRadius="12" Padding="12" Width="220" Height="220" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,6,0,6">
+                        <Image Source="/Images/persian-grey.png" Stretch="Uniform" MaxWidth="200" MaxHeight="200" />
+                    </Border>
+                </WrapPanel>
+            </ScrollViewer>
+        </Border>
+    </Grid>
 </Window>
