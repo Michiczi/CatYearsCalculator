@@ -20,9 +20,9 @@ W Visual Studio 2026:
 
 Lub z linii poleceń:
 
-'''
+```
 dotnet build dotnet run --project ./CatYears
-'''
+```
 
 ## Użycie
 - Wprowadź wiek kota w polu tekstowym (np. `3` lub `2.5`).
