@@ -1,0 +1,33 @@
+﻿<Window x:Class="CatYears.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatYears"
+        mc:Ignorable="d"
+        Title="Cat Years Calculator" Height="450" Width="550">
+    <StackPanel>
+        <StackPanel
+            Orientation="Horizontal"
+            >
+            <TextBlock
+                Text="How old is your cat? (years)"
+                FontSize="24"
+                />
+            <TextBox
+                x:Name="InputCatAge"
+                Width="120"
+                Margin="5,0"
+                TextAlignment="Center"
+                FontSize="16"
+                />
+        </StackPanel>
+        <TextBlock 
+            x:Name="ResultTextBlox"
+            Text="Your car is "
+            FontSize="24"
+            >
+        </TextBlock>
+        <Image Source="/Images/persian-grey.png" Height="375"/>
+    </StackPanel>
+</Window>
