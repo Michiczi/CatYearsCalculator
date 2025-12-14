@@ -1,4 +1,4 @@
-# CatYears
+# Cat Years Calculator
 
 Lekka aplikacja WPF konwertująca wiek kota na przybliżony wiek ludzki.
 
