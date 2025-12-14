@@ -13,7 +13,7 @@ Lekka aplikacja WPF konwertująca wiek kota na przybliżony wiek ludzki.
 ## Budowanie i uruchamianie
 
 W Visual Studio 2026:
-- Otwórz rozwiązanie `CatYears`.
+- Otwórz rozwiązanie `CatYearsCalculator`.
 - Przywróć pakiety NuGet (jeśli są wymagane).
 - Zbuduj projekt: użyj __Build > Build Solution__.
 - Uruchom aplikację: użyj __Debug > Start Debugging__ (F5) lub __Debug > Start Without Debugging__ (Ctrl+F5).
@@ -21,7 +21,7 @@ W Visual Studio 2026:
 Lub z linii poleceń:
 
 ```
-dotnet build dotnet run --project ./CatYears
+dotnet build dotnet run --project ./CatYearsCalculator
 ```
 
 ## Użycie
