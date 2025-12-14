@@ -3,7 +3,7 @@
 Lekka aplikacja WPF konwertująca wiek kota na przybliżony wiek ludzki.
 
 ## Przegląd
-`CatYears` to aplikacja desktopowa napisana w C# (.NET 10 / WPF). Umożliwia wprowadzenie wieku kota (liczba całkowita lub zmiennoprzecinkowa) i obliczenie równowartości w latach ludzkich według prostego modelu (pierwszy rok bardzo szybki, drugi rok — mniejszy wzrost, kolejne lata — stabilny przyrost).
+`Cat Years Calculator` to aplikacja desktopowa napisana w C# (.NET 10 / WPF). Umożliwia wprowadzenie wieku kota (liczba całkowita lub zmiennoprzecinkowa) i obliczenie równowartości w latach ludzkich według prostego modelu (pierwszy rok bardzo szybki, drugi rok — mniejszy wzrost, kolejne lata — stabilny przyrost).
 
 ## Wymagania
 - .NET 10 SDK
